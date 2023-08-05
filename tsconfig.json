@@ -22,8 +22,6 @@
     "baseUrl": "src/",
     "paths": {
       "app": ["app/*"],
-      "routing": ["routing/*"],
-      "pages": ["pages/*"],
       "widgets": ["widgets/*"],
       "features": ["features/*"],
       "entities": ["entities/*"],
