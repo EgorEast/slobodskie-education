@@ -7,6 +7,8 @@ const inter = Montserrat({ subsets: ['latin', 'cyrillic'] });
 export const metadata: Metadata = {
   title: 'Академия Слободских',
   description: 'My App is a...',
+  manifest: '/manifest.json',
+  icons: { apple: { url: '/icon.png' } },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
