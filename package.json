@@ -1,5 +1,6 @@
 {
   "name": "slobodskie-education",
+  "description": "",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,21 +10,26 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "13.4.12",
+    "next": "^13.5.2",
     "next-pwa": "^5.6.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "styled-components": "^6.0.8"
   },
   "devDependencies": {
     "@feature-sliced/eslint-config": "^0.1.0-beta.6",
     "@types/node": "20.4.7",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
+    "babel-plugin-styled-components": "^2.1.4",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-boundaries": "^3.2.0",
     "eslint-plugin-import": "^2.28.0",
     "typescript": "5.1.6"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }
