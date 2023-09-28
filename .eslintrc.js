@@ -21,7 +21,15 @@ module.exports = {
     'import/no-internal-modules': [
       'warn',
       {
-        allow: ['**/ui/*', 'widgets/*', 'features/*', 'entities/*', 'shared/*', 'next/*'],
+        allow: [
+          '**/ui/*',
+          'pages/*',
+          'widgets/*',
+          'features/*',
+          'entities/*',
+          'shared/*',
+          'next/**',
+        ],
       },
     ],
     'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],

@@ -9,6 +9,10 @@
       "path": "src/app"
     },
     {
+      "name": "pages",
+      "path": "src/pages"
+    },
+    {
       "name": "widgets",
       "path": "src/widgets"
     },

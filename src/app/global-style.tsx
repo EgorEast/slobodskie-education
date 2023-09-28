@@ -1,4 +1,9 @@
-:root {
+'use client';
+
+import { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle<{ $whiteColor?: boolean }>`
+  :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono',
@@ -44,6 +49,8 @@ body {
 }
 
 body {
+  height: 100vh;
+  max-height: 100vh;
   color: var(--foreground);
   background: linear-gradient(to bottom, transparent, var(--background-end)) var(--background-start);
 }
@@ -58,3 +65,5 @@ a {
     color-scheme: dark;
   }
 }
+
+`;
