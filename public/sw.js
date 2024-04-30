@@ -1,31 +1,31 @@
 if (!self.define) {
   let e,
-    n = {};
+    n = {}
   const s = (s, i) => (
     (s = new URL(s + '.js', i).href),
     n[s] ||
-      new Promise((n) => {
+      new Promise(n => {
         if ('document' in self) {
-          const e = document.createElement('script');
-          (e.src = s), (e.onload = n), document.head.appendChild(e);
-        } else (e = s), importScripts(s), n();
+          const e = document.createElement('script')
+          ;(e.src = s), (e.onload = n), document.head.appendChild(e)
+        } else (e = s), importScripts(s), n()
       }).then(() => {
-        let e = n[s];
-        if (!e) throw new Error(`Module ${s} didn’t register its module`);
-        return e;
+        let e = n[s]
+        if (!e) throw new Error(`Module ${s} didn’t register its module`)
+        return e
       })
-  );
+  )
   self.define = (i, c) => {
-    const a = e || ('document' in self ? document.currentScript.src : '') || location.href;
-    if (n[a]) return;
-    let t = {};
-    const r = (e) => s(e, a),
-      o = { module: { uri: a }, exports: t, require: r };
-    n[a] = Promise.all(i.map((e) => o[e] || r(e))).then((e) => (c(...e), t));
-  };
+    const a = e || ('document' in self ? document.currentScript.src : '') || location.href
+    if (n[a]) return
+    let t = {}
+    const r = e => s(e, a),
+      o = { module: { uri: a }, exports: t, require: r }
+    n[a] = Promise.all(i.map(e => o[e] || r(e))).then(e => (c(...e), t))
+  }
 }
 define(['./workbox-50de5c5d'], function (e) {
-  'use strict';
+  'use strict'
   importScripts(),
     self.skipWaiting(),
     e.clientsClaim(),
@@ -232,9 +232,9 @@ define(['./workbox-50de5c5d'], function (e) {
     ),
     e.registerRoute(
       ({ url: e }) => {
-        if (!(self.origin === e.origin)) return !1;
-        const n = e.pathname;
-        return !n.startsWith('/api/auth/') && !!n.startsWith('/api/');
+        if (!(self.origin === e.origin)) return !1
+        const n = e.pathname
+        return !n.startsWith('/api/auth/') && !!n.startsWith('/api/')
       },
       new e.NetworkFirst({
         cacheName: 'apis',
@@ -245,8 +245,8 @@ define(['./workbox-50de5c5d'], function (e) {
     ),
     e.registerRoute(
       ({ url: e }) => {
-        if (!(self.origin === e.origin)) return !1;
-        return !e.pathname.startsWith('/api/');
+        if (!(self.origin === e.origin)) return !1
+        return !e.pathname.startsWith('/api/')
       },
       new e.NetworkFirst({
         cacheName: 'others',
@@ -263,5 +263,5 @@ define(['./workbox-50de5c5d'], function (e) {
         plugins: [new e.ExpirationPlugin({ maxEntries: 32, maxAgeSeconds: 3600 })],
       }),
       'GET',
-    );
-});
+    )
+})

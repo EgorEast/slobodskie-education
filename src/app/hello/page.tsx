@@ -1,15 +1,14 @@
-import { NextPage } from 'next';
-import Hello from 'pages/hello-page';
+import { type NextPage } from 'next'
+import Hello from 'pages/hello-page'
 
 // export const runtime = 'edge';
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const metadata = {
   title: 'Hello',
   description: 'Hello world',
-};
+}
 
-interface Props {}
+const HelloPage: NextPage<object> = () => <Hello />
 
-const HelloPage: NextPage<Props> = () => <Hello />;
-
-export default HelloPage;
+export default HelloPage

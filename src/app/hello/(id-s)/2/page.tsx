@@ -1,5 +1,5 @@
-import { NextPage } from 'next';
+import { type NextPage } from 'next'
 
-const IndexedHello: NextPage = () => <div>2</div>;
+const IndexedHello: NextPage = () => <div>2</div>
 
-export default IndexedHello;
+export default IndexedHello

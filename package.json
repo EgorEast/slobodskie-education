@@ -10,31 +10,49 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "check-types": "tsc -p tsconfig.json",
-    "prettier:write": "prettier --write **/*.{js,jsx,ts,tsx,json} && prettier --write *.{js,jsx,ts,tsx,json}"
+    "prettier:write": "prettier --write **/*.{js,jsx,ts,tsx,json} && prettier --write *.{js,jsx,ts,tsx,json}",
+    "prepare": "husky",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage .",
+    "test:debug": "jest --inspect-brk --runInBand --no-cache"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.17.0",
-    "next": "^14.0.4",
-    "next-pwa": "^5.6.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "styled-components": "^6.1.6"
+    "next": "14.2.3",
+    "next-pwa": "5.6.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "styled-components": "6.1.8"
   },
   "devDependencies": {
-    "@feature-sliced/eslint-config": "^0.1.0-beta.6",
-    "@types/node": "20.10.6",
-    "@types/react": "18.2.46",
-    "@types/react-dom": "18.2.18",
-    "babel-plugin-styled-components": "^2.1.4",
-    "eslint": "8.56.0",
-    "eslint-config-next": "14.0.4",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-boundaries": "^4.0.1",
-    "eslint-plugin-import": "^2.29.1",
-    "prettier": "^3.1.1",
-    "typescript": "5.3.3"
+    "@feature-sliced/eslint-config": "0.1.0-beta.6",
+    "@next/eslint-plugin-next": "14.2.3",
+    "@testing-library/jest-dom": "6.4.2",
+    "@testing-library/react": "15.0.5",
+    "@types/node": "20.12.7",
+    "@types/react-dom": "18.3.0",
+    "@types/react": "18.3.1",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "5.62.0",
+    "babel-plugin-styled-components": "2.1.4",
+    "eslint-config-next": "14.2.3",
+    "eslint-import-resolver-typescript": "3.6.1",
+    "eslint-plugin-boundaries": "4.2.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-jsx-a11y": "6.8.0",
+    "eslint-plugin-react-hooks": "4.6.2",
+    "eslint-plugin-react-refresh": "0.4.6",
+    "eslint-plugin-react": "7.34.1",
+    "eslint-plugin-sonarjs": "0.25.1",
+    "eslint": "8.57.0",
+    "husky": "9.0.11",
+    "jest-environment-jsdom": "29.7.0",
+    "jest": "29.7.0",
+    "prettier": "3.2.5",
+    "ts-node": "10.9.2",
+    "typescript": "5.4.5"
   },
   "resolutions": {
-    "styled-components": "^5"
+    "styled-components": "5"
   }
 }

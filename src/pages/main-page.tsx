@@ -1,10 +1,10 @@
-'use client';
+'use client'
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import Image from 'next/image'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const StyledMain = styled.main`
   display: flex;
@@ -13,32 +13,27 @@ const StyledMain = styled.main`
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
-`;
+`
 
 const StyledImage = styled(Image)`
   border: 2px solid #000;
-`;
+`
 
 const MainPage = () => {
-  const [appBadgeCounter, setAppBadgeCounter] = useState(0);
+  const [appBadgeCounter, setAppBadgeCounter] = useState(0)
 
   useEffect(() => {
-    if (!navigator.setAppBadge) {
-      return;
-    }
+    if (!navigator.setAppBadge) return
 
-    let promise;
+    let promise
 
-    if (appBadgeCounter > 0) {
-      promise = navigator.setAppBadge(appBadgeCounter);
-    } else {
-      promise = navigator.clearAppBadge();
-    }
+    if (appBadgeCounter > 0) promise = navigator.setAppBadge(appBadgeCounter)
+    else promise = navigator.clearAppBadge()
 
-    promise.catch((error) => {
-      console.error('Ошибка обновления бэйджа приложения: ', error);
-    });
-  }, [appBadgeCounter]);
+    promise.catch(error => {
+      console.error('Ошибка обновления бэйджа приложения: ', error)
+    })
+  }, [appBadgeCounter])
 
   return (
     <StyledMain>
@@ -51,13 +46,13 @@ const MainPage = () => {
         priority
       />
       <div>app badge counter: {appBadgeCounter}</div>
-      <button onClick={() => setAppBadgeCounter((counter) => counter + 1)}>
+      <button onClick={() => setAppBadgeCounter(counter => counter + 1)}>
         increment app badge
       </button>
       <button onClick={() => setAppBadgeCounter(0)}>clear app badge</button>
       Академия
     </StyledMain>
-  );
-};
+  )
+}
 
-export default MainPage;
+export default MainPage

@@ -1,12 +1,12 @@
-import { NextPage } from 'next';
+import { type NextPage } from 'next'
 
 interface Props {
-  params: { id: number };
+  params: { id: number }
 }
 
 const IndexedHello: NextPage<Props> = ({ params: { id } }) => {
-  console.log('id: ', id);
-  return <div>IndexedHello. ID: {id}</div>;
-};
+  console.log('id: ', id)
+  return <div>IndexedHello. ID: {id}</div>
+}
 
-export default IndexedHello;
+export default IndexedHello
