@@ -2,32 +2,36 @@
   "folders": [
     {
       "name": "root",
-      "path": "."
+      "path": ".",
+    },
+    {
+      "name": "app-routing",
+      "path": "app",
     },
     {
       "name": "app",
-      "path": "src/app"
+      "path": "src/app",
     },
     {
       "name": "pages",
-      "path": "src/pages"
+      "path": "src/pages",
     },
     {
       "name": "widgets",
-      "path": "src/widgets"
+      "path": "src/widgets",
     },
     {
       "name": "features",
-      "path": "src/features"
+      "path": "src/features",
     },
     {
       "name": "entities",
-      "path": "src/entities"
+      "path": "src/entities",
     },
     {
       "name": "shared",
-      "path": "src/shared"
-    }
+      "path": "src/shared",
+    },
   ],
   "settings": {
     "explorer.fileNesting.patterns": {
@@ -36,8 +40,8 @@
       "*.jsx": "${capture}.js, ${basename}.*.jsx",
       "*.tsx": "${capture}.js, ${basename}.*.tsx, ${basename}.*.ts",
       "tsconfig.json": "tsconfig.*.json",
-      "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml"
-    }
+      "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml",
+    },
   },
   "extensions": {
     "recommendations": [
@@ -59,7 +63,7 @@
       "yoavbls.pretty-ts-errors",
       "Gruntfuggly.todo-tree",
       "BriteSnow.vscode-toggle-quotes",
-      "pflannery.vscode-versionlens"
-    ]
-  }
+      "pflannery.vscode-versionlens",
+    ],
+  },
 }
