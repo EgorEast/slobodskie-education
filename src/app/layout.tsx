@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Montserrat } from 'next/font/google'
 import { GlobalStyle } from './global-style'
 
@@ -12,11 +12,19 @@ export const metadata: Metadata = {
   icons: { apple: { url: '/icon.png' } },
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang='ru'>
-      <GlobalStyle />
-      <body className={inter.className}>{children}</body>
-    </html>
-  )
+// eslint-disable-next-line react-refresh/only-export-components
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#fff' },
+    { media: '(prefers-color-scheme: dark)', color: '#000' },
+  ],
 }
+
+const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <html lang='ru'>
+    <GlobalStyle />
+    <body className={inter.className}>{children}</body>
+  </html>
+)
+
+export default RootLayout

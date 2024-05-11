@@ -1,24 +1,40 @@
-/* eslint-disable */
 const process = require('process')
 
 module.exports = {
   extends: [
     'next/core-web-vitals',
+    'next',
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    'prettier',
     'plugin:react/recommended',
-    '@feature-sliced',
+    'plugin:@conarti/feature-sliced/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:sonarjs/recommended',
-    'next',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
   ],
+  ignorePatterns: ['.eslintrc.js', 'next.config.js', 'jest.config.ts', 'public/**'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react', '@typescript-eslint', 'react-refresh', 'sonarjs'],
+
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    project: './tsconfig.json',
+    tsconfigRootDir: __dirname,
+    ecmaVersion: 'latest',
+    // sourceType: 'module',
+    parser: '@typescript-eslint/parser',
+  },
+  plugins: ['react', '@typescript-eslint', 'react-refresh', 'sonarjs', 'jsdoc', 'prettier'],
   settings: {
     'import/resolver': {
       typescript: {
         alwaysTryTypes: true,
+        typescript: true,
+        node: true,
       },
     },
   },
@@ -27,7 +43,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/display-name': 'off',
     'react-hooks/exhaustive-deps': 'off',
-    'no-use-before-define': 'error',
+    // 'no-use-before-define': 'warn',
     quotes: ['warn', 'single'],
     'linebreak-style': ['warn', process.platform === 'win32' ? 'windows' : 'unix'],
     semi: ['error', 'never', { beforeStatementContinuationChars: 'never' }],
@@ -35,6 +51,63 @@ module.exports = {
     'arrow-parens': ['error', 'as-needed'],
     'arrow-body-style': ['error', 'as-needed'],
     'no-console': ['warn', { allow: ['warn', 'error'] }],
+    camelcase: 'error',
+    'react/jsx-props-no-spreading': 'error',
+    'import/no-named-as-default': 'off',
+    '@typescript-eslint/no-shadow': 'error',
+    '@typescript-eslint/adjacent-overload-signatures': 'error',
+    '@typescript-eslint/prefer-function-type': 'error',
+    '@typescript-eslint/restrict-plus-operands': 'error',
+    '@typescript-eslint/consistent-type-definitions': 'error',
+    '@typescript-eslint/explicit-member-accessibility': 'error',
+    '@typescript-eslint/member-ordering': [
+      'error',
+      { default: ['signature', 'method', 'constructor', 'field'] },
+    ],
+    '@typescript-eslint/no-confusing-non-null-assertion': 'error',
+    '@typescript-eslint/no-explicit-any': 'error',
+    '@typescript-eslint/no-require-imports': 'error',
+    '@typescript-eslint/prefer-includes': 'error',
+    '@typescript-eslint/prefer-optional-chain': 'error',
+    '@typescript-eslint/require-array-sort-compare': 'error',
+    '@typescript-eslint/switch-exhaustiveness-check': 'error',
+    '@typescript-eslint/no-empty-interface': [
+      'error',
+      {
+        allowSingleExtends: false,
+      },
+    ],
+    '@typescript-eslint/no-inferrable-types': 'error',
+    '@typescript-eslint/no-misused-new': 'error',
+    '@typescript-eslint/no-non-null-assertion': 'error',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/type-annotation-spacing': 'error',
+    '@typescript-eslint/unified-signatures': 'error',
+    'jsdoc/require-description-complete-sentence': [
+      'error',
+      {
+        tags: ['see', 'copyright'],
+      },
+    ],
+    'jsdoc/require-param': [
+      'error',
+      {
+        checkDestructured: true,
+      },
+    ],
+    'jsdoc/require-param-name': 'error',
+    'jsdoc/require-param-description': 'error',
+    'jsdoc/check-tag-names': 'error',
+    'jsdoc/no-types': 'error',
+    'func-style': [
+      'error',
+      'declaration',
+      {
+        allowArrowFunctions: true,
+      },
+    ],
+    'jsdoc/check-alignment': 'error',
+    'jsdoc/no-bad-blocks': 'error',
     '@typescript-eslint/consistent-type-imports': [
       'error',
       {
@@ -57,30 +130,7 @@ module.exports = {
         ],
       },
     ],
-    // feature-sliced/import-order
-    'import/order': 'error',
-    // feature-sliced/public-api
-    'import/no-internal-modules': [
-      'error',
-      {
-        allow: [
-          'pages/*',
-          'widgets/*',
-          'features/*',
-          'entities/*',
-          'shared/*',
-
-          '@testing-library/**',
-          'antd/**',
-          'dayjs/**',
-          'styled-components/**',
-          'next/**',
-        ],
-      },
-    ],
-    // feature-sliced/layers-slices
-    'boundaries/element-types': 'error',
-    'react-refresh/only-export-components': ['error', { allowConstantExport: true }],
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
 
     // для accessibility
     'jsx-a11y/alt-text': 'error',
@@ -117,5 +167,8 @@ module.exports = {
         roles: ['tabpanel'],
       },
     ],
+    'sonarjs/prefer-immediate-return': 'error',
+    'sonarjs/no-duplicate-string': 'error',
+    'sonarjs/cognitive-complexity': 'error',
   },
 }
