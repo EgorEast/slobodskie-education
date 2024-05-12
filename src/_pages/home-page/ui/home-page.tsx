@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
+// FIXME: почему-то при билде в прод при первой зпгрузке эта страница не отображается корректно
 export const HomePage = () => {
   const [appBadgeCounter, setAppBadgeCounter] = useState(0)
 
