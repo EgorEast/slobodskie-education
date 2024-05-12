@@ -5,22 +5,6 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-const StyledMain = styled.main`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
-  min-height: 100dvh;
-
-  background-color: ${({ theme }) => theme.colors.bg};
-  color: ${({ theme }) => theme.colors.font};
-`
-
-const StyledImage = styled(Image)`
-  border: 2px solid #000;
-`
-
 export const HomePage = () => {
   const [appBadgeCounter, setAppBadgeCounter] = useState(0)
 
@@ -56,3 +40,19 @@ export const HomePage = () => {
     </StyledMain>
   )
 }
+
+const StyledMain = styled.main`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100dvh;
+
+  background-color: ${({ theme }) => theme.colors.bg};
+  color: ${({ theme }) => theme.colors.font};
+`
+
+const StyledImage = styled(Image)`
+  border: 2px solid #000;
+`
