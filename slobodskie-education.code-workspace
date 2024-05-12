@@ -14,7 +14,7 @@
     },
     {
       "name": "pages",
-      "path": "src/pages",
+      "path": "src/_pages",
     },
     {
       "name": "widgets",
