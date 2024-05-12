@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
 
-export const Hello = () => {
+export const HelloPage = () => {
   console.log('hello')
 
   return (

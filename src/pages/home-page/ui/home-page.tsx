@@ -21,7 +21,7 @@ const StyledImage = styled(Image)`
   border: 2px solid #000;
 `
 
-export const MainPage = () => {
+export const HomePage = () => {
   const [appBadgeCounter, setAppBadgeCounter] = useState(0)
 
   useEffect(() => {

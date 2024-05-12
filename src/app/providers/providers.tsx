@@ -1,7 +1,10 @@
 'use client'
 
+import { RegisterServiceWorker } from './register-service-worker-provider'
 import { Theme } from './theme-provider'
 
 export const Providers: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <Theme>{children}</Theme>
+  <RegisterServiceWorker>
+    <Theme>{children}</Theme>
+  </RegisterServiceWorker>
 )

@@ -168,7 +168,5 @@ module.exports = {
     'sonarjs/prefer-immediate-return': 'error',
     'sonarjs/no-duplicate-string': 'error',
     'sonarjs/cognitive-complexity': 'error',
-
-    '@conarti/feature-sliced/absolute-relative': 'warn',
   },
 }

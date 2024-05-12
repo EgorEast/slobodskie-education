@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Montserrat } from 'next/font/google'
+// eslint-disable-next-line @conarti/feature-sliced/absolute-relative
 import { Providers } from 'app/providers'
 import { darkTheme, lightTheme } from 'shared/ui/theme'
 import { GlobalStyle } from './global-style'
