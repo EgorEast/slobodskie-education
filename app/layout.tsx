@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Montserrat } from 'next/font/google'
+import { Providers } from 'app/providers'
+import { darkTheme, lightTheme } from 'shared/ui/theme'
 import { GlobalStyle } from './global-style'
 
 const inter = Montserrat({ subsets: ['latin', 'cyrillic'] })
@@ -15,15 +17,17 @@ export const metadata: Metadata = {
 // eslint-disable-next-line react-refresh/only-export-components
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#fff' },
-    { media: '(prefers-color-scheme: dark)', color: '#000' },
+    { media: '(prefers-color-scheme: light)', color: lightTheme.colors.bg },
+    { media: '(prefers-color-scheme: dark)', color: darkTheme.colors.bg },
   ],
 }
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <html lang='ru'>
     <GlobalStyle />
-    <body className={inter.className}>{children}</body>
+    <Providers>
+      <body className={inter.className}>{children}</body>
+    </Providers>
   </html>
 )
 

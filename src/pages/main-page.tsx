@@ -11,14 +11,17 @@ const StyledMain = styled.main`
   justify-content: space-between;
   align-items: center;
   padding: 6rem;
-  min-height: 100vh;
+  min-height: 100dvh;
+
+  background-color: ${({ theme }) => theme.colors.bg};
+  color: ${({ theme }) => theme.colors.font};
 `
 
 const StyledImage = styled(Image)`
   border: 2px solid #000;
 `
 
-const MainPage = () => {
+export const MainPage = () => {
   const [appBadgeCounter, setAppBadgeCounter] = useState(0)
 
   useEffect(() => {
@@ -53,5 +56,3 @@ const MainPage = () => {
     </StyledMain>
   )
 }
-
-export default MainPage

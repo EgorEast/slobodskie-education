@@ -1,5 +1,4 @@
-import { type NextPage } from 'next'
-import Hello from 'pages/hello-page'
+import { Hello } from 'pages/hello-page'
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const metadata = {
@@ -7,6 +6,4 @@ export const metadata = {
   description: 'Hello world',
 }
 
-const HelloPage: NextPage<object> = () => <Hello />
-
-export default HelloPage
+export default Hello

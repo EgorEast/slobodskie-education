@@ -16,7 +16,6 @@ module.exports = {
     'plugin:import/typescript',
   ],
   ignorePatterns: ['.eslintrc.js', 'next.config.js', 'jest.config.ts', 'public/**'],
-  parser: '@typescript-eslint/parser',
 
   parserOptions: {
     ecmaFeatures: {
@@ -25,7 +24,6 @@ module.exports = {
     project: './tsconfig.json',
     tsconfigRootDir: __dirname,
     ecmaVersion: 'latest',
-    // sourceType: 'module',
     parser: '@typescript-eslint/parser',
   },
   plugins: ['react', '@typescript-eslint', 'react-refresh', 'sonarjs', 'jsdoc', 'prettier'],
@@ -170,5 +168,7 @@ module.exports = {
     'sonarjs/prefer-immediate-return': 'error',
     'sonarjs/no-duplicate-string': 'error',
     'sonarjs/cognitive-complexity': 'error',
+
+    '@conarti/feature-sliced/absolute-relative': 'warn',
   },
 }

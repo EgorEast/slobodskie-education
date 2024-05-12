@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import MainPage from 'pages/main-page'
+import { MainPage } from 'pages/main-page'
 
 const Home = () => {
   useEffect(() => {
